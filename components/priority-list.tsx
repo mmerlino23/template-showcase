@@ -1,29 +1,80 @@
 "use client";
 
-import { priorityBuyList, purchasedItems, promoFindings } from "@/lib/templates";
+import { priorityBuyList, purchasedItems, watchListItems, promoFindings, type PriorityItem } from "@/lib/templates";
+
+function PromoTag({ item }: { item: PriorityItem }) {
+  if (!item.promoCode) return null;
+  const hasReal = item.savings && item.savings > 0;
+  return (
+    <span className={`promo-tag ${hasReal ? "promo-tag-active" : "promo-tag-none"}`}>
+      {item.promoCode}
+    </span>
+  );
+}
+
+function SavingsBadge({ item }: { item: PriorityItem }) {
+  if (!item.savings) return null;
+  return (
+    <span className="savings-badge">Save ${item.savings}</span>
+  );
+}
+
+function BuyRow({ item }: { item: PriorityItem }) {
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="priority-row"
+    >
+      <span className="col-priority">
+        <span className="priority-number">{item.priority}</span>
+      </span>
+      <span className="col-name">
+        <span className="priority-item-name">{item.name}</span>
+        <span className="priority-item-type">{item.type}</span>
+      </span>
+      <span className="col-price">
+        <span className="priority-price">${item.price}</span>
+        {item.originalPrice && (
+          <span className="priority-original-price">${item.originalPrice}</span>
+        )}
+        <SavingsBadge item={item} />
+      </span>
+      <span className="col-project">
+        <span className="priority-project-name">{item.project}</span>
+        <span className="priority-project-note">{item.projectNote}</span>
+      </span>
+      <span className="col-deal">
+        <PromoTag item={item} />
+      </span>
+    </a>
+  );
+}
 
 export function PriorityList() {
   const totalBuyList = priorityBuyList.reduce((sum, item) => sum + item.price, 0);
   const totalPurchased = purchasedItems.reduce((sum, item) => sum + item.price, 0);
+  const totalSavings = [...priorityBuyList, ...watchListItems].reduce((sum, item) => sum + (item.savings || 0), 0);
 
   return (
     <div className="priority-container">
       {/* Summary Cards */}
       <div className="priority-summary">
         <div className="summary-card summary-card-buy">
-          <p className="summary-label">To Buy</p>
+          <p className="summary-label">To Buy (Priority)</p>
           <p className="summary-value">${totalBuyList.toLocaleString()}</p>
           <p className="summary-count">{priorityBuyList.length} items</p>
         </div>
         <div className="summary-card summary-card-owned">
-          <p className="summary-label">Purchased</p>
+          <p className="summary-label">Already Purchased</p>
           <p className="summary-value">${totalPurchased.toLocaleString()}</p>
           <p className="summary-count">{purchasedItems.length} items</p>
         </div>
-        <div className="summary-card summary-card-total">
-          <p className="summary-label">Total Investment</p>
-          <p className="summary-value">${(totalBuyList + totalPurchased).toLocaleString()}</p>
-          <p className="summary-count">when fully purchased</p>
+        <div className="summary-card summary-card-savings">
+          <p className="summary-label">Active Deals Found</p>
+          <p className="summary-value">${totalSavings.toLocaleString()} off</p>
+          <p className="summary-count">across all verified promos</p>
         </div>
       </div>
 
@@ -35,41 +86,25 @@ export function PriorityList() {
           <span className="col-name">Product</span>
           <span className="col-price">Price</span>
           <span className="col-project">Project</span>
-          <span className="col-deal">Deal Status</span>
+          <span className="col-deal">Promo / Deal</span>
         </div>
         {priorityBuyList.map((item) => (
-          <a
-            key={item.name}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="priority-row"
-          >
-            <span className="col-priority">
-              <span className="priority-number">{item.priority}</span>
-            </span>
-            <span className="col-name">
-              <span className="priority-item-name">{item.name}</span>
-              <span className="priority-item-type">{item.type}</span>
-            </span>
-            <span className="col-price">
-              <span className="priority-price">${item.price}</span>
-              {item.originalPrice && (
-                <span className="priority-original-price">${item.originalPrice}</span>
-              )}
-            </span>
-            <span className="col-project">
-              <span className="priority-project-name">{item.project}</span>
-              <span className="priority-project-note">{item.projectNote}</span>
-            </span>
-            <span className="col-deal">
-              {item.dealStatus ? (
-                <span className="deal-badge">{item.dealStatus}</span>
-              ) : (
-                <span className="deal-badge deal-none">No deals</span>
-              )}
-            </span>
-          </a>
+          <BuyRow key={item.name} item={item} />
+        ))}
+      </div>
+
+      {/* Watch List — other items with active deals */}
+      <h3 className="priority-section-title">Also Worth Watching (active deals)</h3>
+      <div className="priority-table">
+        <div className="priority-table-header">
+          <span className="col-priority">#</span>
+          <span className="col-name">Product</span>
+          <span className="col-price">Price</span>
+          <span className="col-project">Use Case</span>
+          <span className="col-deal">Promo / Deal</span>
+        </div>
+        {watchListItems.map((item) => (
+          <BuyRow key={item.name} item={item} />
         ))}
       </div>
 
@@ -112,8 +147,8 @@ export function PriorityList() {
         ))}
       </div>
 
-      {/* Promo Findings */}
-      <h3 className="priority-section-title">Promo Code Check (verified {promoFindings.lastChecked})</h3>
+      {/* Promo Verification Log */}
+      <h3 className="priority-section-title">Promo Verification Log (checked {promoFindings.lastChecked})</h3>
       <p className="promo-summary">{promoFindings.summary}</p>
       <div className="promo-grid">
         {promoFindings.details.map((promo) => (

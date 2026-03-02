@@ -46,6 +46,8 @@ export interface PriorityItem {
   originalPrice?: number;
   priceNote?: string;
   dealStatus?: string;
+  promoCode?: string;
+  savings?: number;
   project: string;
   projectNote: string;
   type: "boilerplate" | "ui-kit" | "component-library";
@@ -58,7 +60,8 @@ export const priorityBuyList: PriorityItem[] = [
     name: "TailAdmin Enterprise",
     url: "https://tailadmin.com",
     price: 699,
-    dealStatus: "Bundle extended — no coupon system",
+    promoCode: "None — no coupon system on site",
+    dealStatus: "Bundle deal extended, price is firm at $699",
     project: "birdseyeroi.com",
     projectNote: "Admin dashboard UI for Call Tracking + Domain Portfolio",
     type: "ui-kit",
@@ -69,7 +72,8 @@ export const priorityBuyList: PriorityItem[] = [
     name: "Shipped",
     url: "https://shipped.club",
     price: 299,
-    dealStatus: "PPP discount may apply (geo-based, up to 70%)",
+    promoCode: "PPP auto-applied (geo-based, up to 70% off)",
+    dealStatus: "Parity Purchasing Power — use VPN to check lower price",
     project: "birdseyeroi.com",
     projectNote: "Full SaaS backend — auth, Stripe, admin, multi-tenant",
     type: "boilerplate",
@@ -81,7 +85,9 @@ export const priorityBuyList: PriorityItem[] = [
     url: "https://supastarter.dev",
     price: 299,
     originalPrice: 349,
-    dealStatus: "$50 off — standing discount",
+    savings: 50,
+    promoCode: "Auto-applied — $50 off standing discount",
+    dealStatus: "$299 from $349 — no coupon needed",
     project: "Brand Media Manager",
     projectNote: "Full SaaS backend — Supabase + Lemon Squeezy + orgs",
     type: "boilerplate",
@@ -93,12 +99,59 @@ export const priorityBuyList: PriorityItem[] = [
     url: "https://shipfa.st",
     price: 199,
     originalPrice: 299,
-    dealStatus: "$100 off — limited spots",
+    savings: 100,
+    promoCode: "Auto-applied — $100 off (14 spots left!)",
+    dealStatus: "$199 from $299 — limited time, no coupon needed",
     project: "General MVPs",
     projectNote: "Quick SaaS launcher for prototypes (optional)",
     type: "boilerplate",
     status: "not-purchased",
     priority: 4,
+  },
+];
+
+export const watchListItems: PriorityItem[] = [
+  {
+    name: "ShadcnUIKit",
+    url: "https://shadcnuikit.com",
+    price: 499,
+    originalPrice: 699,
+    savings: 200,
+    promoCode: "40% off auto-applied — no coupon needed",
+    dealStatus: "Enterprise $499 from $699 — best deal available",
+    project: "General Components",
+    projectNote: "Premium shadcn/ui blocks, layouts, dashboard components",
+    type: "component-library",
+    status: "not-purchased",
+    priority: 5,
+  },
+  {
+    name: "Makerkit",
+    url: "https://makerkit.dev",
+    price: 299,
+    originalPrice: 349,
+    savings: 50,
+    promoCode: "Auto-applied — $50 off standing discount",
+    dealStatus: "$299 from $349 — rarely does promos",
+    project: "Alt: Firebase SaaS",
+    projectNote: "Firebase-based SaaS — alternative to Supastarter",
+    type: "boilerplate",
+    status: "not-purchased",
+    priority: 6,
+  },
+  {
+    name: "NextJSTemplates",
+    url: "https://nextjstemplates.com",
+    price: 199,
+    originalPrice: 249,
+    savings: 50,
+    promoCode: "Auto-applied — $50 off All-Access standing",
+    dealStatus: "$199 from $249 — All-Access bundle",
+    project: "Template Library",
+    projectNote: "Next.js template marketplace — admin, landing, SaaS",
+    type: "ui-kit",
+    status: "not-purchased",
+    priority: 7,
   },
 ];
 
