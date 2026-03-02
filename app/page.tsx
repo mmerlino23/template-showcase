@@ -4,30 +4,25 @@ import { useState } from "react";
 import { Gallery } from "@/components/gallery";
 import { BoilerplateSection } from "@/components/boilerplate-section";
 import { PriorityList } from "@/components/priority-list";
+import { ProductBreakdownTab } from "@/components/product-breakdown";
 
-type Tab = "priority" | "templates" | "boilerplates";
+type Tab = "priority" | "breakdown" | "templates" | "boilerplates";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("priority");
 
   return (
     <div>
-      {/* Compact Header */}
       <header className="app-header">
         <div className="app-header-inner">
           <div className="app-header-left">
-            <img
-              src="/merlino-logo.png"
-              alt="Merlino"
-              className="nav-logo"
-            />
+            <img src="/merlino-logo.png" alt="Merlino" className="nav-logo" />
             <span className="app-header-title">Template Arsenal</span>
           </div>
           <span className="app-header-date">Updated March 2, 2026</span>
         </div>
       </header>
 
-      {/* Tab Navigation */}
       <nav className="tab-nav">
         <div className="tab-nav-inner">
           <button
@@ -35,6 +30,12 @@ export default function Home() {
             onClick={() => setActiveTab("priority")}
           >
             Priority Buy List
+          </button>
+          <button
+            className={`tab-btn${activeTab === "breakdown" ? " tab-btn-active" : ""}`}
+            onClick={() => setActiveTab("breakdown")}
+          >
+            What Am I Buying?
           </button>
           <button
             className={`tab-btn${activeTab === "templates" ? " tab-btn-active" : ""}`}
@@ -51,14 +52,13 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Tab Content */}
       <main className="tab-content">
         {activeTab === "priority" && <PriorityList />}
+        {activeTab === "breakdown" && <ProductBreakdownTab />}
         {activeTab === "templates" && <Gallery />}
         {activeTab === "boilerplates" && <BoilerplateSection />}
       </main>
 
-      {/* Minimal Footer */}
       <footer className="site-footer">
         <p className="footer-text">
           Merlino Marketing &middot; Template Arsenal &middot; Internal Tool
