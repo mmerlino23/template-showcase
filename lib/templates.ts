@@ -37,6 +37,108 @@ export interface BoilerplateFeatures {
   api: string;
 }
 
+// --- Priority Buy List ---
+
+export interface PriorityItem {
+  name: string;
+  url: string;
+  price: number;
+  originalPrice?: number;
+  priceNote?: string;
+  dealStatus?: string;
+  project: string;
+  projectNote: string;
+  type: "boilerplate" | "ui-kit" | "component-library";
+  status: PurchaseStatus;
+  priority: number;
+}
+
+export const priorityBuyList: PriorityItem[] = [
+  {
+    name: "TailAdmin Enterprise",
+    url: "https://tailadmin.com",
+    price: 699,
+    dealStatus: "Bundle extended — no coupon system",
+    project: "birdseyeroi.com",
+    projectNote: "Admin dashboard UI for Call Tracking + Domain Portfolio",
+    type: "ui-kit",
+    status: "not-purchased",
+    priority: 1,
+  },
+  {
+    name: "Shipped",
+    url: "https://shipped.club",
+    price: 299,
+    dealStatus: "PPP discount may apply (geo-based, up to 70%)",
+    project: "birdseyeroi.com",
+    projectNote: "Full SaaS backend — auth, Stripe, admin, multi-tenant",
+    type: "boilerplate",
+    status: "not-purchased",
+    priority: 2,
+  },
+  {
+    name: "Supastarter",
+    url: "https://supastarter.dev",
+    price: 299,
+    originalPrice: 349,
+    dealStatus: "$50 off — standing discount",
+    project: "Brand Media Manager",
+    projectNote: "Full SaaS backend — Supabase + Lemon Squeezy + orgs",
+    type: "boilerplate",
+    status: "not-purchased",
+    priority: 3,
+  },
+  {
+    name: "ShipFast",
+    url: "https://shipfa.st",
+    price: 199,
+    originalPrice: 299,
+    dealStatus: "$100 off — limited spots",
+    project: "General MVPs",
+    projectNote: "Quick SaaS launcher for prototypes (optional)",
+    type: "boilerplate",
+    status: "not-purchased",
+    priority: 4,
+  },
+];
+
+export const purchasedItems: PriorityItem[] = [
+  {
+    name: "Cruip Bundle",
+    url: "https://cruip.com",
+    price: 79,
+    project: "Template Arsenal",
+    projectNote: "20 UI templates (Next.js/Vue/HTML/Figma) — all installed",
+    type: "ui-kit",
+    status: "purchased",
+    priority: 0,
+  },
+  {
+    name: "Aceternity UI",
+    url: "https://ui.aceternity.com",
+    price: 179,
+    project: "Template Arsenal",
+    projectNote: "Animated React components — premium collection",
+    type: "component-library",
+    status: "purchased",
+    priority: 0,
+  },
+];
+
+export const promoFindings = {
+  lastChecked: "2026-03-02",
+  summary: "No real promo codes exist. Only standing discounts.",
+  details: [
+    { name: "ShadcnUIKit", deal: "40% off auto-applied ($499 from $699 Enterprise)", verified: true },
+    { name: "ShipFast", deal: "$100 off Starter ($199 from $299) — 14 spots left", verified: true },
+    { name: "Supastarter", deal: "$50 off ($299 from $349) — standing", verified: true },
+    { name: "Makerkit", deal: "$50 off ($299 from $349) — standing", verified: true },
+    { name: "TailAdmin", deal: "No coupon system — $699 bundle extended", verified: true },
+    { name: "Shipped", deal: "PPP (geo-based) — could not verify discount amount", verified: false },
+    { name: "NextJSTemplates", deal: "$50 off ($199 from $249) — All-Access standing", verified: true },
+  ],
+};
+
 export interface SaasBoilerplate {
   slug: string;
   name: string;
@@ -141,9 +243,10 @@ export const saasBoilerplates: SaasBoilerplate[] = [
     name: "ShipFast",
     headline: "Next.js + Supabase + Stripe Starter",
     description:
-      "Fast SaaS launcher with NextAuth, Supabase PostgreSQL, Stripe billing, email templates via Resend, and a complete landing page. Best value at $79.",
+      "Fast SaaS launcher with NextAuth, Supabase PostgreSQL, Stripe billing, email templates via Resend, and a complete landing page.",
     url: "https://shipfa.st",
-    price: 79,
+    price: 199,
+    priceNote: "$100 off (was $299) — limited spots",
     status: "not-purchased",
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Tailwind CSS", "shadcn/ui"],
     features: {

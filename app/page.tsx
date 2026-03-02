@@ -1,85 +1,67 @@
+"use client";
+
+import { useState } from "react";
 import { Gallery } from "@/components/gallery";
 import { BoilerplateSection } from "@/components/boilerplate-section";
+import { PriorityList } from "@/components/priority-list";
+
+type Tab = "priority" | "templates" | "boilerplates";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<Tab>("priority");
+
   return (
     <div>
-      {/* Hero */}
-      <header className="hero-section">
-        <div className="hero-glow" aria-hidden="true" />
-
-        <div className="animate-slide-up" style={{ position: "relative", maxWidth: 720, margin: "0 auto" }}>
-          <img
-            src="/merlino-logo.png"
-            alt="Merlino Marketing"
-            className="hero-logo"
-          />
-          <p className="hero-eyebrow">20+ Templates &amp; 7 SaaS Boilerplates</p>
-
-          <h1 className="hero-title">
-            Pick a Style.{" "}
-            <span className="gradient-text">We Build Your Site.</span>
-          </h1>
-
-          <p className="hero-subtitle">
-            Browse our collection of handpicked website designs. Pick a style
-            you love — we customize everything with your brand, your content,
-            and launch it for your business.
-          </p>
-
-          <div className="hero-actions">
-            <a href="#gallery" className="btn-primary">
-              Browse Templates
-            </a>
-            <a href="#boilerplates" className="btn-ghost">
-              SaaS Boilerplates
-            </a>
+      {/* Compact Header */}
+      <header className="app-header">
+        <div className="app-header-inner">
+          <div className="app-header-left">
+            <img
+              src="/merlino-logo.png"
+              alt="Merlino"
+              className="nav-logo"
+            />
+            <span className="app-header-title">Template Arsenal</span>
           </div>
+          <span className="app-header-date">Updated March 2, 2026</span>
         </div>
       </header>
 
-      {/* Stats bar */}
-      <div className="stats-bar">
-        {[
-          { value: "20+", label: "Templates" },
-          { value: "9", label: "Categories" },
-          { value: "7", label: "SaaS Starters" },
-          { value: "48hr", label: "Turnaround" },
-        ].map((stat) => (
-          <div key={stat.label} className="stat-item">
-            <p className="stat-value">{stat.value}</p>
-            <p className="stat-label">{stat.label}</p>
-          </div>
-        ))}
-      </div>
+      {/* Tab Navigation */}
+      <nav className="tab-nav">
+        <div className="tab-nav-inner">
+          <button
+            className={`tab-btn${activeTab === "priority" ? " tab-btn-active" : ""}`}
+            onClick={() => setActiveTab("priority")}
+          >
+            Priority Buy List
+          </button>
+          <button
+            className={`tab-btn${activeTab === "templates" ? " tab-btn-active" : ""}`}
+            onClick={() => setActiveTab("templates")}
+          >
+            Templates (20)
+          </button>
+          <button
+            className={`tab-btn${activeTab === "boilerplates" ? " tab-btn-active" : ""}`}
+            onClick={() => setActiveTab("boilerplates")}
+          >
+            Boilerplates &amp; Dashboards
+          </button>
+        </div>
+      </nav>
 
-      {/* Gallery */}
-      <main id="gallery" className="gallery-section">
-        <Gallery />
+      {/* Tab Content */}
+      <main className="tab-content">
+        {activeTab === "priority" && <PriorityList />}
+        {activeTab === "templates" && <Gallery />}
+        {activeTab === "boilerplates" && <BoilerplateSection />}
       </main>
 
-      {/* SaaS Boilerplates Section */}
-      <section id="boilerplates" className="gallery-section">
-        <BoilerplateSection />
-      </section>
-
-      {/* CTA */}
-      <section className="cta-section">
-        <h2 className="cta-title">Ready to Build?</h2>
-        <p className="cta-text">
-          Pick a template, tell us about your business, and we handle the rest.
-          Custom content, your branding, fully optimized for search engines.
-        </p>
-        <a href="mailto:hello@merlinodigital.com" className="btn-primary">
-          Start Your Project
-        </a>
-      </section>
-
-      {/* Footer */}
+      {/* Minimal Footer */}
       <footer className="site-footer">
-        <img src="/merlino-logo.png" alt="Merlino Marketing" className="footer-logo" />
         <p className="footer-text">
-          Web Design &amp; SEO &middot; Last Updated March 2, 2026
+          Merlino Marketing &middot; Template Arsenal &middot; Internal Tool
         </p>
       </footer>
     </div>
