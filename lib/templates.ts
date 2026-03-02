@@ -19,6 +19,7 @@ export interface Template {
   hasNext: boolean;
   demoContent: string;
   screenshot: string;
+  liveUrl?: string;
 }
 
 export const templates: Template[] = [
@@ -34,6 +35,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "SEO Analytics Dashboard",
     screenshot: "/screenshots/gray.png",
+    liveUrl: "https://template-gray-blush.vercel.app",
   },
   {
     slug: "neon",
@@ -47,6 +49,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "AI Rank Tracking Tool",
     screenshot: "/screenshots/neon.png",
+    liveUrl: "https://template-neon-amber.vercel.app",
   },
   {
     slug: "creative",
@@ -60,6 +63,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Digital Marketing Agency",
     screenshot: "/screenshots/creative.png",
+    liveUrl: "https://template-creative.vercel.app",
   },
   {
     slug: "mosaic",
@@ -73,6 +77,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Client Analytics Command Center",
     screenshot: "/screenshots/mosaic.png",
+    liveUrl: "https://template-mosaic.vercel.app",
   },
   {
     slug: "simple",
@@ -86,6 +91,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "SaaS Marketing Platform",
     screenshot: "/screenshots/simple.png",
+    liveUrl: "https://template-simple.vercel.app",
   },
   {
     slug: "appy",
@@ -99,6 +105,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Mobile SEO Audit App",
     screenshot: "/screenshots/appy.png",
+    liveUrl: "https://template-appy.vercel.app",
   },
   {
     slug: "community",
@@ -112,6 +119,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "SEO Mastermind Community",
     screenshot: "/screenshots/community.png",
+    liveUrl: "https://template-community.vercel.app",
   },
   {
     slug: "devfolio",
@@ -125,6 +133,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Agency Portfolio Showcase",
     screenshot: "/screenshots/devfolio.png",
+    liveUrl: "https://template-devfolio.vercel.app",
   },
   {
     slug: "devspace",
@@ -138,6 +147,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Developer Tools Hub",
     screenshot: "/screenshots/devspace.png",
+    liveUrl: "https://template-devspace.vercel.app",
   },
   {
     slug: "docs",
@@ -151,6 +161,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Product Knowledge Base",
     screenshot: "/screenshots/docs.png",
+    liveUrl: "https://template-docs-steel.vercel.app",
   },
   {
     slug: "fintech",
@@ -164,6 +175,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Revenue Analytics Platform",
     screenshot: "/screenshots/fintech.png",
+    liveUrl: "https://template-fintech.vercel.app",
   },
   {
     slug: "job-board",
@@ -177,6 +189,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Service Provider Directory",
     screenshot: "/screenshots/job-board.png",
+    liveUrl: "https://template-job-board.vercel.app",
   },
   {
     slug: "open-pro",
@@ -190,6 +203,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Open Source SEO Toolkit",
     screenshot: "/screenshots/open-pro.png",
+    liveUrl: "https://template-open-pro.vercel.app",
   },
   {
     slug: "podcast",
@@ -203,6 +217,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Industry Podcast Hub",
     screenshot: "/screenshots/podcast.png",
+    liveUrl: "https://template-podcast-gold.vercel.app",
   },
   {
     slug: "quoty",
@@ -216,6 +231,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Client Results Showcase",
     screenshot: "/screenshots/quoty.png",
+    liveUrl: "https://template-quoty.vercel.app",
   },
   {
     slug: "talent",
@@ -229,6 +245,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Team & Hiring Platform",
     screenshot: "/screenshots/talent.png",
+    liveUrl: "https://template-talent.vercel.app",
   },
   {
     slug: "tidy",
@@ -242,6 +259,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Project Management Tool",
     screenshot: "/screenshots/tidy.png",
+    liveUrl: "https://template-tidy.vercel.app",
   },
   {
     slug: "waitlist",
@@ -255,6 +273,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "New Tool Launch Page",
     screenshot: "/screenshots/waitlist.png",
+    liveUrl: "https://template-waitlist.vercel.app",
   },
   {
     slug: "cube",

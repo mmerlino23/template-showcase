@@ -44,7 +44,7 @@ export default async function TemplatePage({
           Back to Templates
         </Link>
         <span className="detail-nav-title">{template.name}</span>
-        <span className="detail-nav-brand">Merlino Digital</span>
+        <img src="/merlino-logo.png" alt="Merlino Marketing" className="nav-logo" />
       </nav>
 
       {/* Main content */}
@@ -105,6 +105,27 @@ export default async function TemplatePage({
               would look for your business.
             </p>
           </div>
+
+          {/* View Full Site */}
+          {template.liveUrl && (
+            <a
+              href={template.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-view-site"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M6 3H3v10h10v-3M9 3h4v4M14 2L7 9"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              View Full Site
+            </a>
+          )}
 
           {/* CTA */}
           <a

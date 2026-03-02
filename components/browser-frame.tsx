@@ -12,9 +12,11 @@ export function BrowserFrame({ template }: BrowserFrameProps) {
   const [device, setDevice] = useState<DeviceMode>("desktop");
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const demoUrl = `/demos/${template.slug}/`;
-  const displayUrl = `merlinodigital.com/demos/${template.slug}`;
-  const canEmbed = template.hasNext;
+  const demoUrl = template.liveUrl || `/demos/${template.slug}/`;
+  const displayUrl = template.liveUrl
+    ? template.liveUrl.replace("https://", "")
+    : `merlinodigital.com/demos/${template.slug}`;
+  const canEmbed = template.hasNext && !!template.liveUrl;
 
   const handleRefresh = useCallback(() => {
     if (iframeRef.current) {

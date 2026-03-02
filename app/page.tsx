@@ -8,6 +8,11 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
 
         <div className="animate-slide-up" style={{ position: "relative", maxWidth: 720, margin: "0 auto" }}>
+          <img
+            src="/merlino-logo.png"
+            alt="Merlino Marketing"
+            className="hero-logo"
+          />
           <p className="hero-eyebrow">20+ Premium Templates</p>
 
           <h1 className="hero-title">
@@ -66,8 +71,9 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="site-footer">
+        <img src="/merlino-logo.png" alt="Merlino Marketing" className="footer-logo" />
         <p className="footer-text">
-          Merlino Digital &mdash; Web Design &amp; SEO
+          Web Design &amp; SEO
         </p>
       </footer>
     </div>
