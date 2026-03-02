@@ -6,7 +6,8 @@ export type TemplateCategory =
   | "Community"
   | "Content"
   | "Landing"
-  | "Marketplace";
+  | "Marketplace"
+  | "Boilerplate";
 
 export interface Template {
   slug: string;
@@ -21,6 +22,296 @@ export interface Template {
   screenshot: string;
   liveUrl?: string;
 }
+
+// --- SaaS Boilerplates & Admin Dashboards ---
+
+export type PurchaseStatus = "purchased" | "not-purchased" | "wishlist";
+
+export interface BoilerplateFeatures {
+  auth: string;
+  payments: string;
+  database: string;
+  email: string;
+  admin: boolean;
+  multiTenant: boolean;
+  api: string;
+}
+
+export interface SaasBoilerplate {
+  slug: string;
+  name: string;
+  headline: string;
+  description: string;
+  url: string;
+  price: number;
+  priceNote?: string;
+  status: PurchaseStatus;
+  stack: string[];
+  features: BoilerplateFeatures;
+  bestFor: string;
+  tags: string[];
+  lastUpdated: string;
+}
+
+export interface AdminDashboard {
+  slug: string;
+  name: string;
+  headline: string;
+  description: string;
+  url: string;
+  price: string;
+  status: PurchaseStatus;
+  stack: string[];
+  type: "component-library" | "admin-tool" | "ui-kit";
+  tags: string[];
+}
+
+export const saasBoilerplates: SaasBoilerplate[] = [
+  {
+    slug: "shipped",
+    name: "Shipped",
+    headline: "Next.js SaaS Starter with Stripe + Auth",
+    description:
+      "Complete SaaS boilerplate with magic link auth, Stripe subscriptions, admin dashboard, 20+ API endpoints, and team workspaces. MongoDB/Firebase backend.",
+    url: "https://shipped.club",
+    price: 299,
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "MongoDB", "Firebase", "Stripe", "Tailwind CSS"],
+    features: {
+      auth: "Magic Link (Passwordless)",
+      payments: "Stripe",
+      database: "MongoDB / Firebase",
+      email: "Postmark",
+      admin: true,
+      multiTenant: true,
+      api: "REST + GraphQL (urql/Pothos)",
+    },
+    bestFor: "birdseyeroi.com — Call Tracking Platform",
+    tags: ["saas", "stripe", "magic-link", "graphql", "admin", "multi-tenant"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "supastarter",
+    name: "Supastarter",
+    headline: "Next.js/Nuxt + Supabase SaaS Kit",
+    description:
+      "Full SaaS starter with Supabase (PostgreSQL), NextAuth, Lemon Squeezy payments, organization support, API key management, blog, and SEO-optimized pages.",
+    url: "https://supastarter.dev",
+    price: 299,
+    status: "not-purchased",
+    stack: ["Next.js", "Nuxt", "TypeScript", "Supabase", "Lemon Squeezy", "Tailwind CSS", "shadcn/ui"],
+    features: {
+      auth: "NextAuth (Google/GitHub OAuth)",
+      payments: "Lemon Squeezy",
+      database: "Supabase (PostgreSQL)",
+      email: "Built-in notifications",
+      admin: true,
+      multiTenant: true,
+      api: "Next.js API routes",
+    },
+    bestFor: "Brand Media Manager — white-label social dashboard",
+    tags: ["saas", "supabase", "nextauth", "organizations", "blog", "seo"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "makerkit",
+    name: "Makerkit",
+    headline: "Next.js SaaS Kit with Firebase",
+    description:
+      "Production-ready SaaS boilerplate with Firebase auth, Firestore database, Stripe billing, real-time data sync, file uploads, and organization-based multi-tenancy.",
+    url: "https://makerkit.dev",
+    price: 299,
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "Firebase", "Stripe", "Tailwind CSS"],
+    features: {
+      auth: "Firebase Authentication",
+      payments: "Stripe",
+      database: "Firebase Firestore",
+      email: "Built-in templates",
+      admin: true,
+      multiTenant: true,
+      api: "Next.js API routes + Firebase",
+    },
+    bestFor: "Real-time apps needing Firebase ecosystem",
+    tags: ["saas", "firebase", "stripe", "realtime", "file-upload"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "shipfast",
+    name: "ShipFast",
+    headline: "Next.js + Supabase + Stripe Starter",
+    description:
+      "Fast SaaS launcher with NextAuth, Supabase PostgreSQL, Stripe billing, email templates via Resend, and a complete landing page. Best value at $79.",
+    url: "https://shipfa.st",
+    price: 79,
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Tailwind CSS", "shadcn/ui"],
+    features: {
+      auth: "NextAuth",
+      payments: "Stripe",
+      database: "Supabase (PostgreSQL)",
+      email: "Resend",
+      admin: true,
+      multiTenant: true,
+      api: "Next.js API routes",
+    },
+    bestFor: "Quick SaaS prototypes and MVPs",
+    tags: ["saas", "supabase", "stripe", "budget", "fast-launch"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "launchfast",
+    name: "LaunchFast",
+    headline: "Multi-Framework SaaS Starter",
+    description:
+      "SaaS boilerplate available for Next.js, Astro, and Svelte. Supabase backend, Stripe payments, Resend email, and deployment guides for Vercel/Netlify.",
+    url: "https://launchfa.st",
+    price: 179,
+    status: "not-purchased",
+    stack: ["Next.js", "Astro", "Svelte", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
+    features: {
+      auth: "NextAuth / Magic Link",
+      payments: "Stripe",
+      database: "Supabase (PostgreSQL)",
+      email: "Resend",
+      admin: true,
+      multiTenant: true,
+      api: "Next.js API routes / Serverless",
+    },
+    bestFor: "Multi-framework flexibility",
+    tags: ["saas", "multi-framework", "astro", "svelte", "stripe"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "saasrock",
+    name: "SaaSrock",
+    headline: "Enterprise SaaS Boilerplate",
+    description:
+      "Enterprise-grade SaaS with first-class multi-tenancy, RBAC, audit logging, webhook system, feature flags, and support for PostgreSQL + MongoDB. REST + GraphQL API.",
+    url: "https://saasrock.com",
+    price: 249,
+    priceNote: "Starter $249 / Pro $499 / Enterprise $1,999",
+    status: "not-purchased",
+    stack: ["Next.js 15", "React", "TypeScript", "PostgreSQL", "Prisma", "Drizzle", "Stripe", "Tailwind CSS"],
+    features: {
+      auth: "JWT + OAuth (Email/Password/Social)",
+      payments: "Stripe + Lemon Squeezy",
+      database: "PostgreSQL (Prisma/Drizzle) or MongoDB",
+      email: "SendGrid / Postmark / Mailgun",
+      admin: true,
+      multiTenant: true,
+      api: "REST + GraphQL",
+    },
+    bestFor: "Complex multi-tenant SaaS with enterprise needs",
+    tags: ["enterprise", "multi-tenant", "rbac", "audit-log", "webhooks", "feature-flags"],
+    lastUpdated: "2026-03",
+  },
+  {
+    slug: "bedrock",
+    name: "Bedrock",
+    headline: "Next.js Enterprise Starter",
+    description:
+      "Deep GraphQL integration with Pothos/urql, Prisma ORM, multi-tenant schema with org isolation, Stripe billing, and Postmark email. Deploys to Vercel or Fly.io.",
+    url: "https://bedrock.mxstbr.com",
+    price: 396,
+    priceNote: "Usually $450, currently discounted",
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "GraphQL", "Stripe", "Tailwind CSS"],
+    features: {
+      auth: "OAuth (Google/GitHub) + Email/Password",
+      payments: "Stripe",
+      database: "PostgreSQL (Prisma ORM)",
+      email: "Postmark",
+      admin: true,
+      multiTenant: true,
+      api: "GraphQL (Pothos server + urql client)",
+    },
+    bestFor: "GraphQL-heavy enterprise applications",
+    tags: ["enterprise", "graphql", "prisma", "postgresql", "multi-tenant"],
+    lastUpdated: "2026-03",
+  },
+];
+
+export const adminDashboards: AdminDashboard[] = [
+  {
+    slug: "tailadmin",
+    name: "TailAdmin",
+    headline: "Tailwind Admin Dashboard UI Kit",
+    description:
+      "Pre-built admin UI components for React, Vue, Angular, Laravel, and HTML. Not a full boilerplate — UI kit only. No backend, no auth, no DB.",
+    url: "https://tailadmin.com",
+    price: "$49 (Basic) / $149 (Pro) / $699 (Enterprise)",
+    status: "not-purchased",
+    stack: ["React", "Vue", "Angular", "Laravel", "HTML", "Tailwind CSS"],
+    type: "ui-kit",
+    tags: ["admin", "dashboard", "ui-kit", "multi-framework"],
+  },
+  {
+    slug: "shadcnuikit",
+    name: "ShadcnUIKit",
+    headline: "Premium shadcn/ui Component Collection",
+    description:
+      "Extended component library built on shadcn/ui. Premium blocks, layouts, and dashboard components for Next.js apps.",
+    url: "https://shadcnuikit.com",
+    price: "$79–$199",
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "shadcn/ui", "Tailwind CSS"],
+    type: "component-library",
+    tags: ["components", "shadcn", "dashboard", "blocks"],
+  },
+  {
+    slug: "nextjstemplates",
+    name: "NextJSTemplates",
+    headline: "Next.js Template Marketplace",
+    description:
+      "Collection of Next.js templates and UI kits including admin dashboards, landing pages, and SaaS templates.",
+    url: "https://nextjstemplates.com",
+    price: "$179",
+    status: "not-purchased",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    type: "ui-kit",
+    tags: ["templates", "nextjs", "admin", "landing-pages"],
+  },
+  {
+    slug: "tremor",
+    name: "Tremor",
+    headline: "React Dashboard Components (Free)",
+    description:
+      "35+ copy-paste React components and 300+ blocks for dashboards. Open source, 15K GitHub stars. Use inside any React boilerplate.",
+    url: "https://tremor.so",
+    price: "Free (MIT)",
+    status: "not-purchased",
+    stack: ["React", "TypeScript", "Tailwind CSS"],
+    type: "component-library",
+    tags: ["dashboard", "charts", "free", "open-source"],
+  },
+  {
+    slug: "adminjs",
+    name: "AdminJS",
+    headline: "Auto-Generated Admin Panels (Free)",
+    description:
+      "Node.js middleware that auto-generates CRUD admin panels from your DB schema. Works with Express, Hapi, Nest.js. 9K GitHub stars.",
+    url: "https://adminjs.co",
+    price: "Free (MIT)",
+    status: "not-purchased",
+    stack: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Prisma"],
+    type: "admin-tool",
+    tags: ["admin", "crud", "auto-generated", "free", "open-source"],
+  },
+  {
+    slug: "aceternity",
+    name: "Aceternity UI",
+    headline: "Premium Animated React Components",
+    description:
+      "Beautiful animated UI components for React/Next.js. Premium collection of motion-rich components, cards, heroes, and interactive elements.",
+    url: "https://ui.aceternity.com",
+    price: "$179",
+    status: "purchased",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    type: "component-library",
+    tags: ["animations", "motion", "premium", "interactive"],
+  },
+];
 
 export const templates: Template[] = [
   {
@@ -63,7 +354,7 @@ export const templates: Template[] = [
     hasNext: true,
     demoContent: "Digital Marketing Agency",
     screenshot: "/screenshots/creative.png",
-    liveUrl: "https://template-creative.vercel.app",
+    liveUrl: "https://merlino-creative.vercel.app",
   },
   {
     slug: "mosaic",
@@ -312,4 +603,5 @@ export const categories: TemplateCategory[] = [
   "Content",
   "Landing",
   "Marketplace",
+  "Boilerplate",
 ];

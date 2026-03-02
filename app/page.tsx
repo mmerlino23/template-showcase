@@ -1,4 +1,5 @@
 import { Gallery } from "@/components/gallery";
+import { BoilerplateSection } from "@/components/boilerplate-section";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
             alt="Merlino Marketing"
             className="hero-logo"
           />
-          <p className="hero-eyebrow">20+ Premium Templates</p>
+          <p className="hero-eyebrow">20+ Templates &amp; 7 SaaS Boilerplates</p>
 
           <h1 className="hero-title">
             Pick a Style.{" "}
@@ -30,8 +31,8 @@ export default function Home() {
             <a href="#gallery" className="btn-primary">
               Browse Templates
             </a>
-            <a href="mailto:hello@merlinodigital.com" className="btn-ghost">
-              Get a Quote
+            <a href="#boilerplates" className="btn-ghost">
+              SaaS Boilerplates
             </a>
           </div>
         </div>
@@ -41,8 +42,8 @@ export default function Home() {
       <div className="stats-bar">
         {[
           { value: "20+", label: "Templates" },
-          { value: "8", label: "Categories" },
-          { value: "4", label: "Frameworks" },
+          { value: "9", label: "Categories" },
+          { value: "7", label: "SaaS Starters" },
           { value: "48hr", label: "Turnaround" },
         ].map((stat) => (
           <div key={stat.label} className="stat-item">
@@ -56,6 +57,11 @@ export default function Home() {
       <main id="gallery" className="gallery-section">
         <Gallery />
       </main>
+
+      {/* SaaS Boilerplates Section */}
+      <section id="boilerplates" className="gallery-section">
+        <BoilerplateSection />
+      </section>
 
       {/* CTA */}
       <section className="cta-section">
@@ -73,7 +79,7 @@ export default function Home() {
       <footer className="site-footer">
         <img src="/merlino-logo.png" alt="Merlino Marketing" className="footer-logo" />
         <p className="footer-text">
-          Web Design &amp; SEO
+          Web Design &amp; SEO &middot; Last Updated March 2, 2026
         </p>
       </footer>
     </div>

@@ -908,6 +908,32 @@ body {
   color: #fff;
 }
 
+/* ─── Status Badges (Boilerplate Section) ─── */
+
+.status-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-purchased {
+  background: rgba(40, 200, 64, 0.12);
+  color: var(--color-green);
+}
+
+.status-not-purchased {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-muted);
+}
+
+.status-wishlist {
+  background: rgba(254, 188, 46, 0.12);
+  color: var(--color-yellow);
+}
+
 /* Logo styles */
 .hero-logo {
   display: block;
