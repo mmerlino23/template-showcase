@@ -33,6 +33,9 @@ function BuyRow({ item }: { item: PriorityItem }) {
       <span className="col-name">
         <span className="priority-item-name">{item.name}</span>
         <span className="priority-item-type">{item.type}</span>
+        {item.tierNote && (
+          <span className="priority-tier-note">{item.tierNote}</span>
+        )}
       </span>
       <span className="col-price">
         <span className="priority-price">${item.price}</span>
