@@ -1,0 +1,2 @@
+:HL["/demos/job-board/_next/static/chunks/f738464d819a3310.css","style"]
+0:{"buildId":"rvFAnXOqH8abG6SNEEzaR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,46756,e=>{e.v("/demos/mosaic/_next/static/media/announcement-icon.d053f546.svg")},86846,e=>{e.v("/demos/mosaic/_next/static/media/modal-image.b59b1cdc.jpg")}]);

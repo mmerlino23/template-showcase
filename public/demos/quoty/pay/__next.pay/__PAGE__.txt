@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[73773,["/demos/quoty/_next/static/chunks/dd9692ea094225d1.js","/demos/quoty/_next/static/chunks/27808c4a4848a1a1.js"],"default"]
+3:I[97367,["/demos/quoty/_next/static/chunks/ff1a16fafef87110.js","/demos/quoty/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"XWBEwmaQ6iiclHbPlAOU_","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"grow w-full max-w-xl mx-auto px-4 sm:px-6 py-12 lg:pt-24 lg:pb-20","children":["$","article",null,{"children":[["$","h2",null,{"className":"h2 font-orbiter mb-4","children":"Confirm & Pay"}],["$","div",null,{"className":"text-slate-500 dark:text-slate-400 space-y-4 mb-8","children":["$","p",null,{"children":"Hire me and start the project by providing your payment details."}]}],["$","$L2",null,{}]]}]}],[["$","script","script-0",{"src":"/demos/quoty/_next/static/chunks/27808c4a4848a1a1.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

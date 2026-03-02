@@ -1,0 +1,2 @@
+:HL["/demos/talent/_next/static/chunks/0b9c3767c1a9f161.css","style"]
+0:{"buildId":"FWoVh858cPYBU1hHXSPYh","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

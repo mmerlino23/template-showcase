@@ -1,0 +1,7 @@
+:HL["/demos/job-board/_next/static/chunks/f738464d819a3310.css","style"]
+:HL["/demos/job-board/_next/static/media/4317bd468b03db68-s.p.7d8848d6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/job-board/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/job-board/images/company-icon-02.svg","image"]
+:HL["/demos/job-board/images/company-icon-03.svg","image"]
+:HL["/demos/job-board/images/company-icon-04.svg","image"]
+0:{"buildId":"rvFAnXOqH8abG6SNEEzaR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"(default)","paramType":null,"paramKey":"(default)","hasRuntimePrefetch":false,"slots":{"children":{"name":"posts","paramType":null,"paramKey":"posts","hasRuntimePrefetch":false,"slots":{"children":{"name":"id","paramType":"d","paramKey":"5","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

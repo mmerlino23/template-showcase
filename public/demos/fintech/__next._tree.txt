@@ -1,0 +1,10 @@
+:HL["/demos/fintech/_next/static/chunks/73d2cd88da6fbbcc.css","style"]
+:HL["/demos/fintech/_next/static/chunks/8d1a5d197490fbe3.css","style"]
+:HL["/demos/fintech/_next/static/media/Aspekta_350-s.p.2c507e20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/media/Aspekta_400-s.p.6f803713.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/media/Aspekta_450-s.p.1ccad31f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/media/Aspekta_500-s.p.d424c6d4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/media/Aspekta_550-s.p.f67cb93f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/media/Aspekta_700-s.p.e2e688aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/fintech/_next/static/chunks/14f3af3e60e3c5b7.css","style"]
+0:{"buildId":"-53mVQxG7uKXFbcVK-qBR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"(default-pages)","paramType":null,"paramKey":"(default-pages)","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

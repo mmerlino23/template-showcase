@@ -1,0 +1,7 @@
+:HL["/demos/docs/_next/static/chunks/fc8269896c9dcb42.css","style"]
+:HL["/demos/docs/_next/static/media/4317bd468b03db68-s.p.7d8848d6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/docs/_next/static/media/Aspekta_350-s.p.2c507e20.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/docs/_next/static/media/Aspekta_400-s.p.6f803713.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/docs/_next/static/media/Aspekta_500-s.p.d424c6d4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/demos/docs/_next/static/media/Aspekta_650-s.p.e4d80ff5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"buildId":"krbw-CUuA406hKFCBDXWc","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"topic","paramType":"d","paramKey":"help","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"how-can-we-help","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

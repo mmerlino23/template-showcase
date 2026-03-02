@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[97367,["/demos/podcast/_next/static/chunks/ff1a16fafef87110.js","/demos/podcast/_next/static/chunks/0a715bcce220a67d.js"],"ViewportBoundary"]
+4:I[97367,["/demos/podcast/_next/static/chunks/ff1a16fafef87110.js","/demos/podcast/_next/static/chunks/0a715bcce220a67d.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"gHSW1-JOWXep1KiQCi5yF","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:[["$","title","0",{"children":"Focusing on one product in a strong market - For 15 years"}],["$","meta","1",{"name":"description","content":"In today's show, we're excited to have Mike chats with Indie Dev Benedicte Ruiz about getting into public speaking. Mike was the CEO of Panoramic X, a pioneer web development studio."}]]
