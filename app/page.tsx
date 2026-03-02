@@ -5,8 +5,9 @@ import { Gallery } from "@/components/gallery";
 import { BoilerplateSection } from "@/components/boilerplate-section";
 import { PriorityList } from "@/components/priority-list";
 import { ProductBreakdownTab } from "@/components/product-breakdown";
+import { CompareTab } from "@/components/compare-tab";
 
-type Tab = "priority" | "breakdown" | "templates" | "boilerplates";
+type Tab = "priority" | "breakdown" | "compare" | "templates" | "boilerplates";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("priority");
@@ -38,6 +39,12 @@ export default function Home() {
             What Am I Buying?
           </button>
           <button
+            className={`tab-btn${activeTab === "compare" ? " tab-btn-active" : ""}`}
+            onClick={() => setActiveTab("compare")}
+          >
+            Compare
+          </button>
+          <button
             className={`tab-btn${activeTab === "templates" ? " tab-btn-active" : ""}`}
             onClick={() => setActiveTab("templates")}
           >
@@ -55,6 +62,7 @@ export default function Home() {
       <main className="tab-content">
         {activeTab === "priority" && <PriorityList />}
         {activeTab === "breakdown" && <ProductBreakdownTab />}
+        {activeTab === "compare" && <CompareTab />}
         {activeTab === "templates" && <Gallery />}
         {activeTab === "boilerplates" && <BoilerplateSection />}
       </main>
